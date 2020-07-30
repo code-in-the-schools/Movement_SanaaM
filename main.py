@@ -42,9 +42,27 @@ while running:
 
   pygame.display.update()
 
-  clock.tick(60)
+  clock.tick()
 
-def movement()
+def movement():
+
+  while True:
+    for event in pygame.event.get():
+      if event.type == KEYDOWN:
+            if event.key == K_LEFT:
+                screen.right = screen.left + screenSpeedX - 10 
+            if event.key == K_RIGHT:
+                screen.left = screen.left + screenSpeedX + 10
+                if event.key == K_UP:
+                  screen.right = screen.left + screenSpeedX + 10
+                  if event.key == K_DOWN:
+                    screen.right = screen.left + screenSpeedX - 10 
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+                pygame.display.update()
+
+    pygame.display.update()
 
 
 
