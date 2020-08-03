@@ -16,6 +16,16 @@ class character(object):
     def draw(self,surface):
       surface.blit(self.image,(self.x,self.y))
 
+    def move(self):
+     if event.K_DOWN:
+        if event.key[pygame.K_LEFT]:
+          self.x -= 1 
+        if event.key[pygame.K_RIGHT]:
+          self.x -= 1 
+        if event.key[pygame.K_UP]: 
+          self.x -= 1 
+        if event.key[pygame.K_DOWN]:
+          self.x -= 1
 
 
 
@@ -47,20 +57,7 @@ while running:
 def movement():
 
   while True:
-    for event in pygame.event.get():
-      if event.type == KEYDOWN:
-            if event.key == K_LEFT:
-                screen.right = screen.left + screenSpeedX - 10 
-            if event.key == K_RIGHT:
-                screen.left = screen.left + screenSpeedX + 10
-                if event.key == K_UP:
-                  screen.right = screen.left + screenSpeedX + 10
-                  if event.key == K_DOWN:
-                    screen.right = screen.left + screenSpeedX - 10 
-            if event.type == QUIT:
-                pygame.quit()
-                sys.exit()
-                pygame.display.update()
+    
 
     pygame.display.update()
 
